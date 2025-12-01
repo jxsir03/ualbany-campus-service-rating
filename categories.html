@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories - Ualbany Campus Service Ratings</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+        function go(cat)
+        {
+            sessionStorage.setItem('prefCategory', cat); 
+            location.href='services.html';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Categories</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="categories.html" aria-current="page">Categories</a>
+            <a href="guidelines.html">Guidelines</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Browse by Category</h2>
+            <p>Pick a category; we'll pre-filter services page.</p>
+        </section>
+
+        <section class="services">
+            <article class="service-card">
+                <h3>Campus Center</h3>
+                <p>Info desk, giftshop/book service and main food options.</p>
+                <button class="primary" onclick="go('campus-center')">View Campus Center</button>
+            </article>
+
+            <article class="service-card">
+                <h3>Dining</h3>
+                <p>Food courts and other dining locations on campus.</p>
+                <button class="primary" onclick="go('dining')">View Dining</button>
+            </article>
+
+            <article class="service-card">
+                <h3>Academics</h3>
+                <p>Advising, libraries, tutoring services, and more.</p>
+                <button class="primary" onclick="go('academic')">View Academic</button>
+            </article>
+
+            <article class="service-card">
+                <h3>Student Services</h3>
+                <p>Health, counseling, IT helpdesk, and other support.</p>
+                <button class="primary" onclick="go('student-services')">View Student Services</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 UAlbany Campus Service Rating - Team Blue</p>
+    </footer>
+</body>
+</html>

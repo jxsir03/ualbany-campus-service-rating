@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ualbany Campus Service Rating - Team Blue</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Ualbany Campus Service Rating - Team Blue</h1>
+    <nav>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Services</a>
+      <a href="categories.html">Categories</a>
+      <a href="guidelines.html">Guidelines</a>
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Search and Review UA Campus Services</h2>
+      <p>Welcome to the UAlbany Campus Service Rating platform. Here you can search for various campus services, read reviews, and share your own experiences to help improve our campus community.</p>
+    </section>
+
+    <section class="filters" aria-label="filters">
+      <input type="text" id="searchInput" placeholder="Search for a service." aria-label="Search services" />
+      <select id="categoryFilter" aria-label="Filter by categories">
+        <option value="all">All Categories</option>
+        <option value="campus-center">Campus Center</option>
+        <option value="dining">Dining</option>
+        <option value="housing">Housing</option>
+        <option value="academic">Academic</option>
+        <option value="student-services">Student Services</option>
+      </select>
+    </section>
+
+    <section id="servicesList" class="services" aria-live="polite"></section>
+
+    <!--Details-->
+    <section id="serviceDetail" class="service-detail hidden" aria-live="polite">
+      <img id="detailBanner" class="detail-banner" alt="" />
+      <button id="detailClose" class="close-btn"aria-label="Close service details">X</button>
+      <div class="detail-header">
+        <h2 id="detailName">Service Name</h2>
+        <div id="detailAvg" class="avg-rating" aria-label="Average Rating">0.0</div>
+      </div>
+      <p id="detailDesc"></p>
+      <p id="detailMeta"></p>
+      <hr />
+
+      <h3>Reviews</h3>
+      <ul id="reviewsList" class="reviews"></ul>
+
+      <h3>Submit a review</h3>
+      <form id="reviewForm" novalidate>
+        <div class="form-row">
+          <label for="author">Name (optional)</label>
+          <input type="text" id="author" name="author" placeholder="Anonymous"/>
+        </div>
+
+        <div class="form-row">
+          <span class="label">Rating</span>
+          <div id="starWidget" class="stars" role="radiogroup" aria-label="Total rating out of 5"></div>
+          <input type="hidden" id="rating" name="rating" required />
+        </div>
+
+        <div class="form-row">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" rows="4" placeholder="Write your review here" required></textarea>
+        </div>
+
+        <button type="submit" class="primary">Submit Review</button>
+        <p id="formMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 UAlbany Campus Service Rating - Team Blue</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
